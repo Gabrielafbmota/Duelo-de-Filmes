@@ -1,4 +1,3 @@
-import express from 'express';
 import episodios from './controllers/episodios/endpoint'
 import { Router } from 'express'
 

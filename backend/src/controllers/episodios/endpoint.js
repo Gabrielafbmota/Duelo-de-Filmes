@@ -1,5 +1,6 @@
+import validate from '../../services/validate'
 import { index, cadastro } from './controller'
-import { validateAPBody } from './validator'
+import { validateEpisodioBody } from './validator'
 
 export default [
     {
@@ -11,6 +12,6 @@ export default [
         method: 'post',
         path: '/episodios',
         action: cadastro,
-        // handlers: [validate.body(validateAPBody)]
+        handlers: [validate.body(validateEpisodioBody)]
     }
 ]
