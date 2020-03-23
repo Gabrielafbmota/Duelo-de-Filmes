@@ -1,8 +1,8 @@
-import * as APShcema from '../../repositories/episodios'
+import * as EndpointRepository from '../../repositories/episodios'
 
 export async function index (req, res, next){
     try{
-        const ap = await APShcema.findAll()
+        const ap = await EndpointRepository.findAll()
         res.status(200).send(ap)
     }catch(error){
         res.status(500).send(error.message)
@@ -12,8 +12,8 @@ export async function index (req, res, next){
 }
 
  export async function cadastro(req, res, next){
-    const { nome, coordenadaX, coordenadaY, coordenadaZ } = req.body
-    const response = await APShcema.store({ nome, coordenadaX, coordenadaY, coordenadaZ })
+    const { nome } = req.body
+    const response = await EndpointRepository.store({ nome })
     if (response) {
         res.status(201).send(response)
       }

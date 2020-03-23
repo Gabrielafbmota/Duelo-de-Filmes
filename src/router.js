@@ -1,7 +1,8 @@
 import express from 'express';
 import episodios from './controllers/episodios/endpoint'
+import { Router } from 'express'
 
-const router = express.Router();
+const router = Router();
 
 function generateRoutes(endpoints, routeOpened = false) {
   function createRoute(route) {
