@@ -12,10 +12,32 @@ export async function index (req, res, next){
 }
 
  export async function cadastro(req, res, next){
-    const { nome } = req.body
-    const response = await EndpointRepository.store({ nome })
-    if (response) {
+    try{
+        const { nome } = req.body
+        const response = await EndpointRepository.store({ nome })
         res.status(201).send(response)
-      }
+    }catch(error){
+        res.status(500).send(error.message)
+    } 
+      
+    return next()
+}
+
+export async function updateEp(req, res, next){
+    try{
+
+    }catch(error){
+        res.status(500).send(error.message)
+    }        
+    
+    return next()
+}
+export async function deleteEp(req, res, next){
+    try{
+
+    }catch(error){
+        res.status(500).send(error.message)
+    }        
+    
     return next()
 }
