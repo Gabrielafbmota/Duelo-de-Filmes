@@ -1,0 +1,22 @@
+{
+  "name": "duelodefilmes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://git.heroku.com/podcastduelodefilmes.git",
+  "author": "Gabriela Mota",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon ./src/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cuid": "^2.1.8",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.12.1"
+  }
+}
