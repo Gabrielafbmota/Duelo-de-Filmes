@@ -8,7 +8,9 @@ const app = express();
 
 mongoose.connect('mongodb://root:1234@duelodefilmes-shard-00-00-mlx9f.mongodb.net:27017,duelodefilmes-shard-00-01-mlx9f.mongodb.net:27017,duelodefilmes-shard-00-02-mlx9f.mongodb.net:27017/duelodefilmes?ssl=true&replicaSet=DueloDeFilmes-shard-0&authSource=admin&retryWrites=true&w=majority',{
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
 
 }).catch(err => {
     console.log(err);

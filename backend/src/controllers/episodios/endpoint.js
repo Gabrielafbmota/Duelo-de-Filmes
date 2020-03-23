@@ -3,12 +3,12 @@ import { validateAPBody } from './validator'
 
 export default [
     {
-        methot: 'get',
+        method: 'get',
         path: '/episodios',
         action: index,
     },
     {
-        methot: 'post',
+        method: 'post',
         path: '/episodios',
         action: cadastro,
         // handlers: [validate.body(validateAPBody)]
