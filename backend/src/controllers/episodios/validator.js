@@ -5,4 +5,7 @@ export function validateEpisodioBody(body) {
     body('episodio_description').isString().required()
 
   }
+  export function validateEpisodioParams(body){
+    body('id').required().body().strict()
+  }
  

@@ -1,16 +1,17 @@
 import EpisodiosSchema from '../models/episodios'
 import cuid from 'cuid'
 
-export async function store({ nome, episodio_url, episodio_image, episodio_description }){
-    const newAP = new EpisodiosSchema ({
-        apId: cuid(),
+export async function save({ nome, episodio_url, episodio_image, episodio_description, tema }){
+    const newEpisode = new EpisodiosSchema ({
+        id: cuid(),
         nome,
         episodio_url,
         episodio_image,
-        episodio_description
+        episodio_description,
+        tema
     })
 
-    return newAP.store()
+    return newEpisode.save()
 }
 
 export async function findAll() {

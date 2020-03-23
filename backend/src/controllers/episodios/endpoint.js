@@ -1,6 +1,6 @@
 import validate from '../../services/validate'
-import { index, cadastro, update, deleteEp } from './controller'
-import { validateEpisodioBody } from './validator'
+import { index, store, update, deleteEp } from './controller'
+// import { validateEpisodioBody, validateEpisodioParams } from './validator'
 
 export default [
     {
@@ -11,19 +11,19 @@ export default [
     {
         method: 'post',
         path: '/episodios',
-        action: cadastro,
-        handlers: [validate.body(validateEpisodioBody)]
+        action: store,
+        // handlers: [validate.body(validateEpisodioBody)]
     },
-    {
-        method: 'put',
-        path: '/episodios/:id',
-        action: update,
-        handlers: [validate.body(validateEpisodioBody)]
-    },
-    {
-        method: 'delete',
-        path: '/episodios/id',
-        action: deleteEp,
-        handlers: [validate.body(validateEpisodioBody)]
-    }
+    // {
+    //     method: 'put',
+    //     path: '/episodios/:id',
+    //     action: update,
+    //     handlers: [validate.body(validateEpisodioBody), validate.params(validateEpisodioParams)]
+    // },
+    // {
+    //     method: 'delete',
+    //     path: '/episodios/id',
+    //     action: deleteEp,
+    //     handlers: [validate.body(validateEpisodioBody), validate.params(validateEpisodioParams)]
+    // }
 ]
