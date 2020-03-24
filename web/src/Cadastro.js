@@ -1,44 +1,44 @@
-import React from "react";
-//import dos componentes
-import Episodios from './Episodios'
-// import do css
+import React, { useState, useEffect } from "react";
+import api from './services/api'
+import EpisodioItem from './components/EpisodioItem'
+import EpisodioForm from './components/EpisodioForm'
+
 import "./assets/css/global.css";
 import "./assets/css/app.css";
 import "./assets/css/sidebar.css"
 import "./assets/css/main.css"
-//import da imagem
-import imagem from './assets/images/imagem.jpg'
+
 function App() {
+
+  const [episodios, setEpisodios] = useState([])
+  useEffect(() => {
+    async function loadEpisodios() {
+      const response = await api.get('/episodios');
+      setEpisodios(response.data)
+    }
+    loadEpisodios()
+  }, [])
+
+  async function handleAddEp(data) {
+
+    const response = await api.post('/episodios', data)
+   
+    setEpisodios([...episodios, response.data])
+  }
+
   return (
     <div id="app">
-      {/* lateral da página, onde serão cadastrados os eps */}
       <aside>
         <strong>Cadastrar</strong>
-        <form>
-          <div className="input-block">
-            <label htmlFor="episodio">Episódio</label>
-            <input name="episodio" id="episodio" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="URL do Episódio">URL do Episódio</label>
-            <input name="urlepisodio" id="urlepisodio" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="imgepisodio">Imagem do Episódio</label>
-            <input name="imgepisodio" id="imgepisodio" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="descricaoepisodio">Descrição do Episódio</label>
-            <textarea rows="8" name="descricaoepisodio" id="descricaoepisodio" required></textarea>
-
-          </div>
-          <button type="submit"> Cadastrar</button>
-        </form>
+        <EpisodioForm onSubmit={handleAddEp}/>
       </aside>
-      {/* fim da lateral da página */}
-      {/* começo do "corpo" da página, onde ficarão os eps cadastrados; */}
       <main>
-        <Episodios />        
+
+        <ul>
+          {episodios.map(ep => (
+            <EpisodioItem key={ep.id} ep={ep} />
+          ))}
+        </ul>
       </main>
     </div>
   );
