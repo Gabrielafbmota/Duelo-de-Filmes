@@ -1,5 +1,5 @@
 import validate from '../../services/validate'
-import { index, store, update, deleteEp } from './controller'
+import { index, store, update, deleteEpisodio } from './controller'
 import { validateEpisodioBody, validateEpisodioParams } from './validator'
 
 export default [
@@ -20,10 +20,10 @@ export default [
     //     action: update,
     //     handlers: [validate.body(validateEpisodioBody), validate.params(validateEpisodioParams)]
     // },
-    // {
-    //     method: 'delete',
-    //     path: '/episodios/id',
-    //     action: deleteEp,
-    //     handlers: [validate.body(validateEpisodioBody), validate.params(validateEpisodioParams)]
-    // }
+    {
+        method: 'delete',
+        path: '/episodios/:id',
+        action: deleteEpisodio,
+        handlers: [validate.params(validateEpisodioParams)]
+    }
 ]

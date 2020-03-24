@@ -6,6 +6,11 @@ export function validateEpisodioBody(body) {
 
   }
   export function validateEpisodioParams(body){
-    body('id').required().body().strict()
+    body('id').required()
+    body().strict()
   }
  
+  export function validateDeviceParams(body) {
+    body('id').required()
+    body().strict()
+  }

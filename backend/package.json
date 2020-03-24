@@ -6,7 +6,8 @@
   "author": "Gabriela Mota",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/server.js"
+    "start": "nodemon ./src/server.js",
+    "dev": "nodemon ./src/server.js"
   },
   "dependencies": {
     "better-validator": "^2.1.8",

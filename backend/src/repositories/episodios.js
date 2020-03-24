@@ -17,8 +17,9 @@ export async function save({ nome, episodio_url, episodio_image, episodio_descri
 export async function findAll() {
   return EpisodiosSchema.find()
 }
-export async function deleteEP(){
-  console.log("delete")
+export async function deleteEpisodio(episodioId){
+  
+  return EpisodiosSchema.deleteOne({ episodioId })
 }
 export async function update(){
   console.log("update")
