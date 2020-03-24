@@ -1,6 +1,6 @@
 import validate from '../../services/validate'
 import { index, store, update, deleteEp } from './controller'
-// import { validateEpisodioBody, validateEpisodioParams } from './validator'
+import { validateEpisodioBody, validateEpisodioParams } from './validator'
 
 export default [
     {
@@ -12,7 +12,7 @@ export default [
         method: 'post',
         path: '/episodios',
         action: store,
-        // handlers: [validate.body(validateEpisodioBody)]
+        handlers: [validate.body(validateEpisodioBody)]
     },
     // {
     //     method: 'put',

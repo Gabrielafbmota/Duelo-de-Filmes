@@ -15,8 +15,8 @@ mongoose.connect('mongodb://root:1234@duelodefilmes-shard-00-00-mlx9f.mongodb.ne
 }).catch(err => {
     console.log(err);
 });
-app.use(bodyParser.json());
 app.use(cors())
+app.use(bodyParser.json());
 app.use(router);
 
 export default app;
