@@ -15,7 +15,8 @@
     "cors": "^2.8.5",
     "cuid": "^2.1.8",
     "express": "^4.17.1",
-    "mongoose": "^5.9.5"
+    "mongoose": "^5.9.5",
+    "soundcloud-node-api": "^0.0.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
