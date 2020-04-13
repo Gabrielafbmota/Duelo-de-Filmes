@@ -1,29 +1,9 @@
-#app{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 30px;
-    display: flex;
-    flex-direction: row;
-}
 html,
 body {
   margin: 0;
+  padding: 0;
+  border: 0;
 }
-
-#App {
-  font-family: sans-serif;
-
-  /* Give app full page to work with */
-  height: 100vh;
-}
-
-#page-wrap {
-  text-align: center;
-
-  /* Prevent sidebar from showing a scrollbar on page */
-  overflow: auto;
-}
-
 /* Individual item */
 .bm-item {
   display: inline-block;
@@ -87,30 +67,4 @@ body {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-  align-items: flex-start;
-}
-
-#app main{
-    margin-left: 30px;
-}
-
-@media (max-width: 1000px){
-    #app{
-        flex-direction: column;
-    }
-    #app main{
-        margin-left: 0;
-        margin-top: 30px;
-    }
-
-    #app aside{
-        width: 96%;
-    }
-}
-
-@media (max-width: 650px){
-   
-    #app aside{
-        width: 92%;
-    }
 }

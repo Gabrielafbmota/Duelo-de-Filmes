@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+
 import './style.css'
+import "../../assets/css/global.css";
+
 
 function EpisidioForm({ onSubmit }) {
-
 
     const [nome, setNome] = useState('')
     const [tema, setTema] = useState('')
@@ -13,7 +15,7 @@ function EpisidioForm({ onSubmit }) {
     async function handleSubmit(e) {
         e.preventDefault()
 
-       await onSubmit({
+        await onSubmit({
             nome,
             episodio_url,
             episodio_image,
@@ -29,60 +31,60 @@ function EpisidioForm({ onSubmit }) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="input-block">
-                <label htmlFor="episodio">Episódio</label>
                 <input
                     name="episodio"
                     id="episodio"
                     required
+                    placeholder="Episódio"
                     value={nome}
                     onChange={e => setNome(e.target.value)}
                 />
             </div>
             <div className="input-block">
-                <label htmlFor="tema">Tema</label>
                 <input
                     name="tema"
                     id="tema"
                     required
+                    placeholder="Tema"
                     value={tema}
                     onChange={e => setTema(e.target.value)}
                 />
             </div>
             <div className="input-block">
-                <label htmlFor="URL do Episódio">URL do Episódio</label>
                 <input
                     type="url"
                     name="urlepisodio"
                     id="urlepisodio"
                     required
+                    placeholder="URL do Episódio"
                     value={episodio_url}
                     onChange={e => setUrlEpisodio(e.target.value)}
                 />
             </div>
             <div className="input-block">
-                <label htmlFor="imgepisodio">Imagem do Episódio</label>
                 <input
                     type="url"
                     name="imgepisodio"
                     id="imgepisodio"
                     required
+                    placeholder="Imagem do Episódio"
                     value={episodio_image}
                     onChange={e => setImagemEpisodio(e.target.value)}
                 />
-            </div>
+            </div><br/>
             <div className="input-block">
-                <label htmlFor="descricaoepisodio">Descrição do Episódio</label>
                 <textarea
                     rows="8"
                     name="descricaoepisodio"
                     id="descricaoepisodio"
                     required
+                    placeholder="Descrição do Episódio"
                     value={episodio_description}
                     onChange={e => setDescricaoEpisodio(e.target.value)}
-                ></textarea>
-
+                />
             </div>
-            <button type="submit"> Cadastrar</button>
+
+            <button className="button" type="submit"> Cadastrar</button>
         </form>
     )
 }

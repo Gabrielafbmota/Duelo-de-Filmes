@@ -1,0 +1,31 @@
+#App {
+  height: 100vh;
+  position: absolute;
+  width: 60%;
+}
+#container {
+  width: 60%;
+  position: relative;
+  top: 20%;
+  left: 45%;
+  border: 1px solid rgb(53, 5, 53);
+  border-radius: 5%;
+  align-items: center;
+  padding: 30px;
+  background-color: DarkMagenta; /* For browsers that do not support gradients */
+  background-image: linear-gradient(DarkMagenta, Magenta); /* Standard syntax (must be last) */
+  -webkit-box-shadow: 5px 5px 30px 9px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 30px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 30px 9px rgba(0, 0, 0, 0.5);
+}
+#page-wrap {
+  text-align: center;
+  align-items: center;
+  overflow: auto;
+  padding: 30px;
+}
+header {
+  text-align: center;
+  overflow: auto;
+  padding: 30px, 5px;
+}

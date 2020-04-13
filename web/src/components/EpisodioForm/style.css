@@ -1,0 +1,13 @@
+form{
+    width: 80%;
+    max-width:500px;
+    padding-left: 20px;
+}
+
+form input{
+    margin-top: 8px;
+}
+form .input-block {
+    padding: 0 10px;
+
+}
